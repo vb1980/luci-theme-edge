@@ -1,16 +1,16 @@
 <%#
-	edge is a clean HTML5 theme for LuCI. It is based on luci-theme-material edge Template
+	Edge is a clean HTML5 theme for LuCI. It is based on luci-theme-material edge Template
 
-	luci-theme-edge
-	Copyright 2019 Jerrykuku <jerrykuku@qq.com>
+	luci-theme-Edge
+	Copyright 2020 GaryPang <garyp@qq.com>
 
 	Have a bug? Please create an issue here on GitHub!
-	https://github.com/jerrykuku/luci-theme-edge/issues 
+	https://github.com/garypang13/luci-theme-edge/issues 
 
-	luci-theme-material: 
-	Copyright 2015 Lutty Yang <lutty@wcan.in>
+	luci-theme-Argon: 
+	Copyright 2019 Jerrykuku <jerrykuku@qq.com>
 	
-	Agron Theme
+	Edge Theme
 	https://demos.creative-tim.com/edge-dashboard/index.html 
 
 	Licensed to the public under the Apache License 2.0
@@ -70,9 +70,9 @@
 	<meta name="msapplication-TileImage" content="<%=media%>/logo.png" />
 	<link rel="icon" href="<%=media%>/logo.png" sizes="144x144">
 	<link rel="apple-touch-icon-precomposed" href="<%=media%>/logo.png" sizes="144x144">
-	<link rel="stylesheet" href="<%=media%>/cascade.css?v=2.1">
 	<link rel="stylesheet" href="<%=media%>/landscape.css">
-	<link rel="stylesheet" href="<%=media%>/waves.css?v=1.3">
+	<link rel="stylesheet" href="<%=media%>/waves.css">
+	<link rel="stylesheet" href="<%=media%>/cascade.css">
 	<link rel="shortcut icon" href="<%=media%>/favicon.ico">
 	<% if node and node.css then %>
 	<link rel="stylesheet" href="<%=resource%>/<%=node.css%>">
@@ -82,10 +82,10 @@
 		<%=css %>
 	</style>
 	<% end -%>
-	<script src="<%=url('admin/translations', luci.i18n.context.lang)%>?v=2.1"></script>
-	<script src="<%=resource%>/cbi.js?v=2.1"></script>
-	<script src="<%=resource%>/xhr.js?v=2.1"></script>
-	<script src="<%=media%>/js/jquery.min.js?v=2.1"></script>
+	<script src="<%=url('admin/translations', luci.i18n.context.lang)%>"></script>
+	<script src="<%=resource%>/cbi.js"></script>
+	<script src="<%=resource%>/luci.js"></script>
+	<script src="<%=media%>/js/jquery.min.js"></script>
 	<script type="text/javascript">//<![CDATA[
 		(function () {
 			function get_children(node) {
@@ -129,3 +129,22 @@
 <body
 	class="lang_<%=luci.i18n.context.lang%> <% if node then %><%= striptags( node.title ) %><% end %> <% if luci.dispatcher.context.authsession then %>logged-in<% end %>"
 	data-page="<%= table.concat(disp.context.requestpath, "-") %>">
+<!--[if lt IE 9]>
+<style>
+.chromeframe{
+padding:2rem 3rem;
+margin:0 auto;
+font-size:14px;
+color:#fff;
+position:relative;
+z-index:9999;
+text-align:center;
+}
+.chromeframe a{
+color:orangered;
+}
+</style>
+<p class="chromeframe">您使用的IE浏览器版本过低,
+<a href="https://www.microsoft.com/edge/" target="_blank" class="textToLink one-pan-link-mark"> 升级 </a>您的IE浏览器<br/>
+或使用<a href="http://www.google.com/chromeframe/?redirect=true"> Chrome </a>, <a href="https://www.mozilla.org/zh-CN/firefox/new/"> Firefox </a>等高级浏览器，将会得到更好的体验！</a></p>
+<![endif]-->
